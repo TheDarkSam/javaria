@@ -10,10 +10,10 @@ public class Mago extends Personagem {
         if (mana >= 5) {  // VALOR DE CONSUMO DE MANA.
             int dano = calcularDano(inimigo);
             System.out.println("+ --------------------------------------------------- +");
-            System.out.println(this.nome + " ataca o " + inimigo.getNome() + " causando [ " + dano + " ] de dano!");
+            System.out.println(this.nome + " ataca o " + inimigo.getNome() + " causando [" + dano + "] de dano!");
             inimigo.inimigoreceberDano(dano);
             mana -= 5;
-            System.out.println(this.nome + " agora tem [ " + this.mana + " ] de mana.");
+            System.out.println(this.nome + " agora tem [" + this.mana + "] de mana.");
             System.out.println("+ --------------------------------------------------- +");
         } else {
             System.out.println(this.nome + " não tem mana suficiente para lançar um feitiço!");

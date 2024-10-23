@@ -8,12 +8,11 @@ public class Inimigos {
 
     public void inimigoreceberDano(int dano) {
         this.vida -= dano;
-        System.out.println("+ --------------------------------------------------- +");
         if (this.vida < 0) {
             this.vida = 0;
         }
-        System.out.println(this.nome + " recebeu [ " + dano + " ] de dano e ficou com [ " + this.vida + " ] de vida.");
-        System.out.println("+ --------------------------------------------------- +");
+        System.out.println(this.nome + " recebeu [" + dano + "] de dano e ficou com [" + this.vida + "] de vida.");
+        System.out.println(" ");
 
         if (this.vida <= 0) {
             this.vida = 0;

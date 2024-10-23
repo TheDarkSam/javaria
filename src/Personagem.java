@@ -47,8 +47,8 @@ public abstract class Personagem {
 
     public void receberDano(int dano) {
         this.vida -= dano;
+        System.out.println(this.nome + " recebeu [" + this.dano + "] de dano e ficou com [" + this.vida + "] de vida.");
         System.out.println("+ --------------------------------------------------- +");
-        System.out.println(this.nome + " recebeu [ " + this.dano + " ] de dano e ficou com [ " + this.vida + " ] de vida.");
         if (this.vida <= 0) {
             System.out.println(this.nome + " morreu.");
             System.out.println("+ --------------------------------------------------- +");
