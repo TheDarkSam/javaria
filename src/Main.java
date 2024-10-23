@@ -185,8 +185,8 @@ public class Main {
                     System.out.println("-> O que " + personagem.getNome() + " deve fazer?");
                     System.out.println(" ");
                     System.out.println("1 - Atacar.");
-                    System.out.println("2 - Fugir.");
-                    System.out.println("3 - Abrir Inventário.");
+                    System.out.println("2 - Abrir Inventário.");
+                    System.out.println("3 - Fugir.");
                     System.out.println(" ");
                     System.out.println("+ --------------------------------------------------- +");
                     int escolhaBatalha = scanf.nextInt();
@@ -209,15 +209,16 @@ public class Main {
                         } else {
                             System.out.println(goblinComum.getNome() + " foi derrotado!");
                         }
-
-                    } else if (escolhaBatalha == 2) {
+                        } else if (escolhaBatalha == 2){
+                        inventario.adicionarItens();
+                        inventario.exibirInventario();
+                        inventario.removerItem();
+                        } else if (escolhaBatalha == 3) {
                         System.out.println(personagem.getNome() + " fugiu do combate.");
                         break;
-                    } else if (escolhaBatalha == 3){
-                        inventario.exibirInventario();
-                    } else {
+                        } else {
                         System.out.println("Opção inválida. Tente novamente.");
-                    }
+                        }
 
                     // VERIFICA SE O PERSONAGEM ESTÁ VIVO APÓS ATAQUE DO GOBLIN.
                     if (!personagem.estaVivo()) {

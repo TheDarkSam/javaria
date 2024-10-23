@@ -6,24 +6,12 @@ public class Inventario {
     private static final int LIMITE = 8; // Limite de itens no inventário.
     private static ArrayList<String> inventario = new ArrayList<String>();
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println(" ");
-
-        adicionarItens(scanner);
-        exibirInventario();
-
-        System.out.println(" ");
-        scanner.close();
-    }
-
-    public static void adicionarItens(Scanner scanner) {
+    public static void adicionarItens() {
         String item;
-
+        Scanner scanf = new Scanner(System.in);
         while (inventario.size() < LIMITE) {
             System.out.println("Digite o nome do item para adicionar ao inventário (ou 'sair' para finalizar):");
-            item = scanner.nextLine();
+            item = scanf.nextLine();
 
             if (item.equalsIgnoreCase("sair")) {
                 break;
@@ -44,11 +32,25 @@ public class Inventario {
     }
 
     public static void exibirInventario() {
-        System.out.println("\nItens no inventário:");
+        System.out.println("Itens no inventário:");
         for (String item : inventario) {
             System.out.println("- " + item);
         }
     }
+
+    public static void removerItem() {
+        Scanner scanf = new Scanner(System.in);
+        System.out.println("Digite o nome do item que deseja remover:");
+        String item = scanf.nextLine();
+
+        if (inventario.contains(item)) {
+            inventario.remove(item);
+            System.out.println("Item '" + item + "' removido do inventário.");
+        } else {
+            System.out.println("Item não encontrado no inventário.");
+        }
+    }
+
 }
 
 // PS: DEPOIS ARRUMAR PRA PODER SER EXECUTADO SOMENTE NA MAIN.
