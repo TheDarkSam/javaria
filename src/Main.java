@@ -25,6 +25,7 @@ public class Main {
     // CÓDIGO PROPRIAMENTE DITO.
     public static void main(String[] args) {
         Scanner scanf = new Scanner(System.in);
+        Inventario inventario = new Inventario();
 
         // Gerações de ESPADA.
         GeradorEspadasComuns geradorEspadasComuns = new GeradorEspadasComuns();
@@ -78,11 +79,12 @@ public class Main {
             System.out.println(" ");
             System.out.print("Digite sua escolha: ");
             int escolha = scanf.nextInt();
+            scanf.nextLine();
 
             switch (escolha) {
                 case 1:
                     clear();
-                    personagem = new Tanker(nome, 20, 15,5);
+                    personagem = new Tanker(nome, 20, 15, 5);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("      " + nome + " escolheu a classe Tanker!");
                     System.out.println("+ ---------------------------------------- +");
@@ -99,7 +101,7 @@ public class Main {
                     break;
                 case 2:
                     clear();
-                    personagem = new Guerreiro(nome, 15, 20,10);
+                    personagem = new Guerreiro(nome, 15, 20, 10);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("    " + nome + " escolheu a classe Guerreiro!");
                     System.out.println("+ ---------------------------------------- +");
@@ -138,10 +140,10 @@ public class Main {
 
         // ESCOLHAS DE CLASSE CONCLUÍDAS. RECEBIMENTO DE ITENS INICIAIS.
 
+        clear();
         // COMEÇO DA HISTÓRIA.
 
-        clear();
-
+/*
         System.out.println("+ ---------------------------------------------------" +
                 "-----------------------------------------------------------" +
                 "--------------------------------------------------- +");
@@ -165,14 +167,15 @@ public class Main {
         System.out.println("+ ---------------------------------------------------" +
                 "-----------------------------------------------------------" +
                 "--------------------------------------------------- +");
- 
+ */
+        // PRONTO PARA INICIAR A BATALHA.
         System.out.println("Pronto para iniciar? (1 - Sim)");
         System.out.println("-> ");
         int escolha2 = scanf.nextInt();
 
         switch (escolha2) {
             case 1:
-                //BATALHA TESTE
+                // BATALHA TESTE
                 clear();
                 System.out.println("+ --------------------------------------------------- +");
                 System.out.println("       Seu primeiro inimigo é um " + goblinComum.getNome());
@@ -182,38 +185,47 @@ public class Main {
                     System.out.println("-> O que " + personagem.getNome() + " deve fazer?");
                     System.out.println(" ");
                     System.out.println("1 - Atacar.");
-                    System.out.println("2 - Fugir.");
+                    System.out.println("2 - Abrir Inventário.");
+                    System.out.println("3 - Fugir.");
                     System.out.println(" ");
                     System.out.println("+ --------------------------------------------------- +");
+                    int escolhaBatalha = scanf.nextInt();
+                    scanf.nextLine();
 
-                    int escolha = scanf.nextInt();
-
-                    if (escolha == 1) {
+                    if (escolhaBatalha == 1) {
                         // PERSONAGEM ATACA O GOBLIN.
                         clear();
                         personagem.atacar(goblinComum);
-                        // VERIFICA SE O GOBLIN ESTÁ VIVO APÓS ATAQUE DO PERSONAGEM. roda ae
+                        // VERIFICA SE O GOBLIN ESTÁ VIVO APÓS ATAQUE DO PERSONAGEM.
                         if (goblinComum.inimigoestaVivo()) {
                             // GOBLIN CONTRA-ATACA.
                             int danoGoblin = goblinComum.inimigocalcularDano(personagem); // CALCULA O DANO DO GOBLIN.
-                            System.out.println(goblinComum.getNome() + " ataca " + personagem.getNome() + " causando " + danoGoblin + " de dano!");
+                            System.out.println(goblinComum.getNome() + " ataca " + personagem.getNome() + " causando [" + danoGoblin + "] de dano!");
                             personagem.receberDano(danoGoblin); // PERSONAGEM RECEBENDO DANO.
                             System.out.println(" ");
                             System.out.println("Pressione Enter para continuar...");
                             scanf.nextLine();
-                            scanf.close();
-                        } else { System.out.println(goblinComum.getNome() + " foi derrotado!"); }
-
-                    } else if (escolha == 2) { System.out.println(personagem.getNome() + " fugiu do combate.");
+                            clear();
+                        } else {
+                            System.out.println(goblinComum.getNome() + " foi derrotado!");
+                        }
+                        } else if (escolhaBatalha == 2){
+                        inventario.adicionarItens();
+                        inventario.exibirInventario();
+                        inventario.removerItem();
+                        } else if (escolhaBatalha == 3) {
+                        System.out.println(personagem.getNome() + " fugiu do combate.");
                         break;
-                    } else { System.out.println("Opção inválida. Tente novamente."); }
+                        } else {
+                        System.out.println("Opção inválida. Tente novamente.");
+                        }
 
                     // VERIFICA SE O PERSONAGEM ESTÁ VIVO APÓS ATAQUE DO GOBLIN.
-                    if (!personagem.estaVivo()) { System.out.println(personagem.getNome() + " foi derrotado!"); }
+                    if (!personagem.estaVivo()) {
+                        System.out.println(personagem.getNome() + " foi derrotado!");
+                    }
                 }
-                scanf.close();
         }
+        scanf.close();
     }
 }
-
-
