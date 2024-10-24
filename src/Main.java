@@ -106,7 +106,7 @@ public class Main {
                     break;
                 case 3:
                     clear();
-                    personagem = new Mago(nome, 10, 20, 10);
+                    personagem = new Mago(nome, 10, 20, 15);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("       " + nome + " escolheu a classe Mago!");
                     System.out.println("+ ---------------------------------------- +");
