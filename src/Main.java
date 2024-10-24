@@ -28,8 +28,7 @@ public class Main {
         Inventario inventario = new Inventario();
 
         // Gerações de ESPADA.
-        GeradorEspadasComuns geradorEspadasComuns = new GeradorEspadasComuns();
-        Espada espadaComum = geradorEspadasComuns.gerarEspadasComuns();
+        GeradorEspadasComuns gerarEspadaComum = new GeradorEspadasComuns();
 
         // Gerações de CAJADO.
         GeradorCajadosComuns gerarCajadoComum = new GeradorCajadosComuns();
@@ -38,8 +37,7 @@ public class Main {
         GeradorArmadurasComuns gerarArmaduraComum = new GeradorArmadurasComuns();
 
         // Gerações de MANTOS.
-        GeradorMantosComuns geradorMantosComuns = new GeradorMantosComuns();
-        Manto mantoComum = geradorMantosComuns.gerarMantosComuns();
+        GeradorMantosComuns gerarMantoComum = new GeradorMantosComuns();
 
         // INIMIGOS.
         Inimigos goblinComum = new Inimigos.InimigoBuilder()
@@ -86,9 +84,7 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("      " + nome + " escolheu a classe Tanker!");
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("Você ganhou a espada: " + espadaComum.getNome());
-                    System.out.println("Dano: " + espadaComum.getDano());
-                    System.out.println("Custo de Stamina: " + espadaComum.getStamina());
+                    System.out.println(gerarEspadaComum.gerarEspadasComuns());
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
                     System.out.println("+ ---------------------------------------- +");
@@ -101,9 +97,7 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("    " + nome + " escolheu a classe Guerreiro!");
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("Você ganhou a espada: " + espadaComum.getNome());
-                    System.out.println("Dano: " + espadaComum.getDano());
-                    System.out.println("Custo de Stamina: " + espadaComum.getStamina());
+                    System.out.println(gerarEspadaComum.gerarEspadasComuns());
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
                     System.out.println("+ ---------------------------------------- +");
@@ -112,15 +106,13 @@ public class Main {
                     break;
                 case 3:
                     clear();
-                    personagem = new Mago(nome, 10, 10, 20);
+                    personagem = new Mago(nome, 10, 20, 10);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("       " + nome + " escolheu a classe Mago!");
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarCajadoComum.gerarCajadosComuns());
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("Você ganhou o manto: " + mantoComum.getNome());
-                    System.out.println("Resistência: " + mantoComum.getResistencia());
-                    System.out.println("Ganho de Mana: " + mantoComum.getMana());
+                    System.out.println(gerarMantoComum.gerarMantosComuns());
                     System.out.println("+ ---------------------------------------- +");
                     imprimirDevagar("............................................", 75);
                     classeEscolhida = true;
@@ -160,64 +152,25 @@ public class Main {
                 "-----------------------------------------------------------" +
                 "--------------------------------------------------- +");
  */
-        // PRONTO PARA INICIAR A BATALHA.
         System.out.println("Pronto para iniciar? (1 - Sim)");
         System.out.println("-> ");
         int escolha2 = scanf.nextInt();
 
         switch (escolha2) {
             case 1:
-                // BATALHA TESTE
                 clear();
-                System.out.println("+ --------------------------------------------------- +");
-                System.out.println("       Seu primeiro inimigo é um " + goblinComum.getNome());
-                while (goblinComum.inimigoestaVivo() && personagem.estaVivo()) {
-                    System.out.println("+ --------------------------------------------------- +");
-                    System.out.println(" ");
-                    System.out.println("-> O que " + personagem.getNome() + " deve fazer?");
-                    System.out.println(" ");
-                    System.out.println("1 - Atacar.");
-                    System.out.println("2 - Abrir Inventário.");
-                    System.out.println("3 - Fugir.");
-                    System.out.println(" ");
-                    System.out.println("+ --------------------------------------------------- +");
-                    int escolhaBatalha = scanf.nextInt();
-                    scanf.nextLine();
-
-                    if (escolhaBatalha == 1) {
-                        // PERSONAGEM ATACA O GOBLIN.
-                        clear();
-                        personagem.atacar(goblinComum);
-                        // VERIFICA SE O GOBLIN ESTÁ VIVO APÓS ATAQUE DO PERSONAGEM.
-                        if (goblinComum.inimigoestaVivo()) {
-                            // GOBLIN CONTRA-ATACA.
-                            int danoGoblin = goblinComum.inimigocalcularDano(personagem); // CALCULA O DANO DO GOBLIN.
-                            System.out.println(goblinComum.getNome() + " ataca " + personagem.getNome() + " causando [" + danoGoblin + "] de dano!");
-                            personagem.receberDano(danoGoblin); // PERSONAGEM RECEBENDO DANO.
-                            System.out.println(" ");
-                            System.out.println("Pressione Enter para continuar...");
-                            scanf.nextLine();
-                            clear();
-                        } else {
-                            System.out.println(goblinComum.getNome() + " foi derrotado!");
-                        }
-                        } else if (escolhaBatalha == 2){
-                        inventario.adicionarItens();
-                        inventario.exibirInventario();
-                        inventario.removerItem();
-                        } else if (escolhaBatalha == 3) {
-                        System.out.println(personagem.getNome() + " fugiu do combate.");
-                        break;
-                        } else {
-                        System.out.println("Opção inválida. Tente novamente.");
-                        }
-
-                    // VERIFICA SE O PERSONAGEM ESTÁ VIVO APÓS ATAQUE DO GOBLIN.
-                    if (!personagem.estaVivo()) {
-                        System.out.println(personagem.getNome() + " foi derrotado!");
-                    }
+                if (escolha2 == 1) {
+                    Batalha batalha = new Batalha();
+                    batalha.definirPersonagem(personagem);
+                    batalha.definirInimigo(goblinComum);
+                    batalha.iniciar();
+                    batalha.definirPersonagem(personagem);
+                    batalha.definirInimigo(goblinChefe);
+                    batalha.iniciar();
+                } else {
+                    System.out.println("Saindo do jogo...");
                 }
         }
         scanf.close();
+       }
     }
-}

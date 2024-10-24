@@ -2,21 +2,20 @@ import java.util.Random;
 
 class Manto extends Itens {
     private String nome;
+    private int resistencia;
+    private int addMana;
 
-    public Manto(String nome, int resistencia, int mana) {
+    public Manto(String nome, int resistencia, int addMana) {
         this.nome = nome;
         this.resistencia = resistencia;
-        this.mana = mana;
-    }
-
-    public Manto() {
+        this.addMana = addMana;
     }
 
     @Override
     public String toString() {
-        return "Manto: " + nome +
-                ", Resistência: " + resistencia +
-                ", Mana Concedida: " + mana;
+        return " Manto: " + nome +
+                "\n Resistência: " + resistencia +
+                "\n Mana Concedida: " + addMana;
     }
 
     public String getNome() { return nome; }
@@ -24,17 +23,11 @@ class Manto extends Itens {
 
 class GeradorMantosComuns {
     private Random random = new Random();
-    Manto mantos = new Manto();
 
     public Manto gerarMantosComuns() {
-
-        for (int i = 0; i < 1; i++) {
-            String nome = "Manto Comum";
-            int resistencia = random.nextInt(2) + 1;
-            int mana = random.nextInt(1) + 1;
-
-            mantos = new Manto(nome, resistencia, mana);
-        }
-        return mantos;
+        String nome = "Manto Comum";
+        int resistencia = random.nextInt(2) + 1;
+        int addMana = random.nextInt(2) + 1;
+        return new Manto(nome, resistencia, addMana);
     }
 }

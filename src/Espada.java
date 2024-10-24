@@ -2,21 +2,20 @@ import java.util.Random;
 
 class Espada extends Itens {
     private String nome;
+    private int dano;
+    private int custoStamina;
 
-    public Espada(String nome, int dano, int stamina) {
+    public Espada(String nome, int dano, int custoStamina) {
         this.nome = nome;
         this.dano = dano;
-        this.stamina = stamina;
-    }
-
-    public Espada() {
+        this.custoStamina = custoStamina;
     }
 
     @Override
     public String toString() {
-        return "Espada: " + nome +
-                ", Dano: " + dano +
-                ", Custo Stamina: " + stamina;
+        return " Espada: " + nome +
+                "\n Dano: " + dano +
+                "\n Custo de Stamina: " + custoStamina;
     }
 
     public String getNome() {
@@ -24,20 +23,13 @@ class Espada extends Itens {
     }
 }
 
-
 class GeradorEspadasComuns {
     private Random random = new Random();
-    Espada espadas = new Espada();
 
     public Espada gerarEspadasComuns() {
-
-        for (int i = 0; i < 1; i++) {
-            String nome = "Espada Comum";
-            int dano = random.nextInt(10) + 1;
-            int stamina = random.nextInt(5) + 5;
-
-            espadas = new Espada(nome, dano, stamina);
-        }
-        return espadas;
+        String nome = "Espada Comum";
+        int dano = random.nextInt(3) + 1;
+        int custoStamina = random.nextInt(2) + 1;
+        return new Espada(nome, dano, custoStamina);
     }
 }

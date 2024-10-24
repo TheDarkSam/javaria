@@ -1,7 +1,7 @@
 public class Mago extends Personagem {
     int mana;
 
-    public Mago(String nome, int vida, int stamina, int mana) {super(nome, vida, stamina);
+    public Mago(String nome, int vida, int mana, int dano) {super(nome, vida, dano);
         this.mana = mana;
     }
 
@@ -16,6 +16,7 @@ public class Mago extends Personagem {
             System.out.println(this.nome + " agora tem [" + this.mana + "] de mana.");
             System.out.println("+ --------------------------------------------------- +");
         } else {
+            System.out.println("+ --------------------------------------------------- +");
             System.out.println(this.nome + " não tem mana suficiente para lançar um feitiço!");
             System.out.println("+ --------------------------------------------------- +");
         }

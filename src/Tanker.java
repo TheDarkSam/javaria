@@ -13,6 +13,7 @@ public class Tanker extends Personagem {
             System.out.println(this.nome + " agora tem [" + this.stamina + "] de stamina.");
             System.out.println("+ --------------------------------------------------- +");
         } else {
+            System.out.println("+ --------------------------------------------------- +");
             System.out.println(this.nome + " não tem stamina suficiente para atacar!");
             System.out.println("+ --------------------------------------------------- +");
         }
