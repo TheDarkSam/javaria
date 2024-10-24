@@ -32,12 +32,10 @@ public class Main {
         Espada espadaComum = geradorEspadasComuns.gerarEspadasComuns();
 
         // Gerações de CAJADO.
-        GeradorCajadosComuns geradorCajadosComuns = new GeradorCajadosComuns();
-        Cajado cajadoComum = geradorCajadosComuns.gerarCajadosComuns();
+        GeradorCajadosComuns gerarCajadoComum = new GeradorCajadosComuns();
 
         // Gerações de ARMADURA.
-        GeradorArmadurasComuns geradorArmadurasComuns = new GeradorArmadurasComuns();
-        Armadura armaduraComum = geradorArmadurasComuns.gerarArmadurasComuns();
+        GeradorArmadurasComuns gerarArmaduraComum = new GeradorArmadurasComuns();
 
         // Gerações de MANTOS.
         GeradorMantosComuns geradorMantosComuns = new GeradorMantosComuns();
@@ -92,9 +90,7 @@ public class Main {
                     System.out.println("Dano: " + espadaComum.getDano());
                     System.out.println("Custo de Stamina: " + espadaComum.getStamina());
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("Você ganhou a armadura: " + armaduraComum.getNome());
-                    System.out.println("Resistência: " + armaduraComum.getResistencia());
-                    System.out.println("Ganho de Stamina: " + armaduraComum.getStamina());
+                    System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
                     System.out.println("+ ---------------------------------------- +");
                     imprimirDevagar("............................................", 75);
                     classeEscolhida = true;
@@ -109,9 +105,7 @@ public class Main {
                     System.out.println("Dano: " + espadaComum.getDano());
                     System.out.println("Custo de Stamina: " + espadaComum.getStamina());
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("Você ganhou a armadura: " + armaduraComum.getNome());
-                    System.out.println("Resistência: " + armaduraComum.getResistencia());
-                    System.out.println("Ganho de Stamina: " + armaduraComum.getStamina());
+                    System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
                     System.out.println("+ ---------------------------------------- +");
                     imprimirDevagar("............................................", 75);
                     classeEscolhida = true;
@@ -122,9 +116,7 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("       " + nome + " escolheu a classe Mago!");
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("Você ganhou o cajado: " + cajadoComum.getNome());
-                    System.out.println("Dano: " + cajadoComum.getDano());
-                    System.out.println("Custo de Mana: " + cajadoComum.getcustoMana());
+                    System.out.println(gerarCajadoComum.gerarCajadosComuns());
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("Você ganhou o manto: " + mantoComum.getNome());
                     System.out.println("Resistência: " + mantoComum.getResistencia());

@@ -9,14 +9,13 @@ class Cajado extends Itens {
         this.custoMana = custoMana;
     }
 
-    public Cajado() {
-    }
+    public Cajado() {}
 
     @Override
     public String toString() {
-        return "Cajado: " + nome +
-                ", Dano: " + dano +
-                ", Custo Mana: " + custoMana;
+        return " Cajado: " + nome +
+                "\n Dano: " + dano +
+                "\n Custo Mana: " + custoMana;
     }
 
     public String getNome() { return nome; }
@@ -24,17 +23,11 @@ class Cajado extends Itens {
 
 class GeradorCajadosComuns {
     private Random random = new Random();
-    Cajado cajados = new Cajado();
 
     public Cajado gerarCajadosComuns() {
-
-        for (int i = 0; i < 1; i++) {
-            String nome = "Cajado Comum";
-            int dano = random.nextInt(10) + 1;
-            int custoMana = random.nextInt(5) + 5;
-
-            cajados = new Cajado(nome, dano, custoMana);
-        }
-        return cajados;
+        String nome = "Cajado Comum";
+        int dano = random.nextInt(3) + 1;
+        int custoMana = random.nextInt(2) + 1;
+        return new Cajado(nome, dano, custoMana);
     }
 }
