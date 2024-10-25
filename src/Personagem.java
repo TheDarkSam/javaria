@@ -22,10 +22,10 @@ public abstract class Personagem {
         this.dano = dano;
     }
 
-    public Personagem(String nome, int vida, int stamina) {
+    public Personagem(String nome, int vida, int dano) {
         this.nome = nome;
         this.vida = vida;
-        this.stamina = stamina;
+        this.dano = dano;
     }
 
     protected String getNome() {
@@ -56,6 +56,9 @@ public abstract class Personagem {
 
     public void receberDano(int dano) {
         this.vida -= dano;
+        if (this.vida < 0) {
+            this.vida = 0;
+        }
         System.out.println(this.nome + " recebeu [" + dano + "] de dano e ficou com [" + this.vida + "] de vida.");
         System.out.println("+ --------------------------------------------------- +");
         if (this.vida <= 0) {

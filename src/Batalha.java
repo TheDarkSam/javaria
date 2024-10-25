@@ -6,7 +6,7 @@ public class Batalha {
         for (int i = 0; i < 100; i++) {
             System.out.println();
         }
-    }
+    }//trocar por clear dps!
 
     private Personagem personagem;
     private Inimigos inimigo;

@@ -1,12 +1,8 @@
-import java.util.Random;
-
 public class Mago extends Personagem {
     int mana;
     private int manaMax = 20;
 
-    public Mago(String nome, int vida, int mana, int dano) {super(nome, vida, dano);
-        this.mana = mana;
-    }
+    public Mago(String nome, int vida, int mana, int dano) {super(nome, vida, dano);this.mana = mana;}
 
     @Override
     public void atacar(Inimigos inimigo) {
@@ -23,13 +19,6 @@ public class Mago extends Personagem {
             System.out.println(this.nome + " não tem mana suficiente para lançar um feitiço!");
             System.out.println("+ --------------------------------------------------- +");
         }
-    }
-
-    @Override
-    public int calcularDano(Inimigos inimigo) {
-        Random random = new Random();
-        int variacao = random.nextInt(6) - 2;
-        return Math.max(0, (this.mana / 5) + this.dano + variacao); // Mais Dano quanto mais Mana.
     }
 }
 

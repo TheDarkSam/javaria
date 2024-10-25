@@ -67,9 +67,9 @@ public class Main {
             System.out.println("            Escolha sua classe:");
             System.out.println("+ ---------------------------------------- +");
             System.out.println(" ");
-            System.out.println("1 - Tanker | 20 HP | 15 Sta | 5 Dano");
-            System.out.println("2 - Guerreiro | 15 HP | 20 Sta | 10 Dano");
-            System.out.println("3 - Mago | 10HP | 10 Sta | 20 Man");
+            System.out.println("1 - Tanker | 30 HP | 15 Sta | 5 Dano");
+            System.out.println("2 - Guerreiro | 20 HP | 20 Sta | 15 Dano");
+            System.out.println("3 - Mago | 10HP | 25 Mana | 25 Dano");
             System.out.println(" ");
             System.out.println("+ ---------------------------------------- +");
             System.out.println(" ");
@@ -80,7 +80,7 @@ public class Main {
             switch (escolha) {
                 case 1:
                     clear();
-                    personagem = new Tanker(nome, 20, 15, 5);
+                    personagem = new Tanker(nome, 30, 15, 5);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("      " + nome + " escolheu a classe Tanker!");
                     System.out.println("+ ---------------------------------------- +");
@@ -94,7 +94,7 @@ public class Main {
                     break;
                 case 2:
                     clear();
-                    personagem = new Guerreiro(nome, 15, 20, 10);
+                    personagem = new Guerreiro(nome, 20, 20, 15);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("    " + nome + " escolheu a classe Guerreiro!");
                     System.out.println("+ ---------------------------------------- +");
@@ -108,7 +108,7 @@ public class Main {
                     break;
                 case 3:
                     clear();
-                    personagem = new Mago(nome, 10, 20, 15);
+                    personagem = new Mago(nome, 10, 25, 25);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("       " + nome + " escolheu a classe Mago!");
                     System.out.println("+ ---------------------------------------- +");
