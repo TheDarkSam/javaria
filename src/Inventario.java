@@ -53,4 +53,3 @@ public class Inventario {
 
 }
 
-// PS: DEPOIS ARRUMAR PRA PODER SER EXECUTADO SOMENTE NA MAIN.

@@ -75,22 +75,55 @@ public abstract class Personagem {
     public void recuperar() {
         clear();
         System.out.println("+ --------------------------------------------------- +");
+
         if (this instanceof Mago) {
             Mago mago = (Mago) this;
-            System.out.println(mago.nome + " está recuperando mana...");
-            mago.mana += 5;
-            System.out.println(mago.nome + " agora tem [" + mago.mana + "] de mana.");
+            System.out.println(mago.nome + " está tentando recuperar mana...");
+
+            // Verifica se a mana está no máximo
+            if (mago.mana >= Mago.manaMax) {
+                System.out.println(mago.nome + " já está com a mana no máximo! Não pode ser recuperada.");
+            } else {
+                // Recupera a mana, garantindo que não ultrapasse o limite
+                mago.mana += 5;
+                if (mago.mana > Mago.manaMax) { // Garante que a mana não ultrapasse o máximo
+                    mago.mana = Mago.manaMax;
+                }
+                System.out.println(mago.nome + " agora tem [" + mago.mana + "] de mana.");
+            }
+
         } else if (this instanceof Guerreiro) {
             Guerreiro guerreiro = (Guerreiro) this;
-            System.out.println(guerreiro.nome + " está recuperando stamina...");
-            guerreiro.stamina += 5;
-            System.out.println(guerreiro.nome + " agora tem [" + guerreiro.stamina + "] de stamina.");
+            System.out.println(guerreiro.nome + " está tentando recuperar stamina...");
+
+            // Verifica se a stamina está no máximo
+            if (guerreiro.stamina >= Guerreiro.staminaMax) {
+                System.out.println(guerreiro.nome + " já está com a stamina no máximo! Não pode ser recuperada.");
+            } else {
+                // Recupera a stamina
+                guerreiro.stamina += 5;
+                if (guerreiro.stamina > Guerreiro.staminaMax) { // Garante que a stamina não ultrapasse o máximo
+                    guerreiro.stamina = Guerreiro.staminaMax;
+                }
+                System.out.println(guerreiro.nome + " agora tem [" + guerreiro.stamina + "] de stamina.");
+            }
+
         } else if (this instanceof Tanker) {
             Tanker tanker = (Tanker) this;
-            System.out.println(tanker.nome + " está recuperando stamina...");
-            tanker.stamina += 5;
-            System.out.println(tanker.nome + " agora tem [" + tanker.stamina + "] de stamina.");
+            System.out.println(tanker.nome + " está tentando recuperar stamina...");
+
+            // Verifica se a stamina está no máximo
+            if (tanker.stamina >= Tanker.staminaMax) {
+                System.out.println(tanker.nome + " já está com a stamina no máximo! Não pode ser recuperada.");
+            } else {
+                // Recupera a stamina
+                tanker.stamina += 5;
+                if (tanker.stamina > Tanker.staminaMax) { // Garante que a stamina não ultrapasse o máximo
+                    tanker.stamina = Tanker.staminaMax;
+                }
+                System.out.println(tanker.nome + " agora tem [" + tanker.stamina + "] de stamina.");
+            }
         }
+
         System.out.println("+ --------------------------------------------------- +");
     }
-}

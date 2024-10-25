@@ -1,5 +1,7 @@
 public class Tanker extends Personagem {
 
+    public static final int staminaMax = 15;
+
     public Tanker(String nome, int vida, int stamina,int dano) {super(nome, vida, stamina,dano);}
 
     @Override

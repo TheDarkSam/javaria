@@ -2,6 +2,7 @@ import java.util.Random;
 
 public class Mago extends Personagem {
     int mana;
+    private int manaMax = 20;
 
     public Mago(String nome, int vida, int mana, int dano) {super(nome, vida, dano);
         this.mana = mana;

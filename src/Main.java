@@ -88,7 +88,8 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
                     System.out.println("+ ---------------------------------------- +");
-                    imprimirDevagar("............................................", 75);
+                    System.out.println("Pressione Enter para continuar...");
+                    scanf.nextLine();
                     classeEscolhida = true;
                     break;
                 case 2:
@@ -101,7 +102,8 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
                     System.out.println("+ ---------------------------------------- +");
-                    imprimirDevagar("............................................", 75);
+                    System.out.println("Pressione Enter para continuar...");
+                    scanf.nextLine();
                     classeEscolhida = true;
                     break;
                 case 3:
@@ -114,7 +116,8 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarMantoComum.gerarMantosComuns());
                     System.out.println("+ ---------------------------------------- +");
-                    imprimirDevagar("............................................", 75);
+                    System.out.println("Pressione Enter para continuar...");
+                    scanf.nextLine();
                     classeEscolhida = true;
                     break;
                 default:
@@ -154,12 +157,12 @@ public class Main {
  */
         System.out.println("Pronto para iniciar? (1 - Sim)");
         System.out.println("-> ");
-        int escolha2 = scanf.nextInt();
+        int escolha = scanf.nextInt();
 
-        switch (escolha2) {
+        switch (escolha) {
             case 1:
                 clear();
-                if (escolha2 == 1) {
+                if (escolha == 1) {
                     Batalha batalha = new Batalha();
                     batalha.definirPersonagem(personagem);
                     batalha.definirInimigo(goblinComum);
