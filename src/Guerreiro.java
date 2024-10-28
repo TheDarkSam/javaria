@@ -2,7 +2,9 @@ public class Guerreiro extends Personagem {
 
     public static final int staminaMax = 20;
 
-    public Guerreiro(String nome, int vida, int stamina, int dano) {super(nome, vida, stamina, dano);}
+    public Guerreiro(String nome, int vida, int stamina, int dano, int staminaMax, int vidaMax) {
+        super(nome, vida, stamina, dano, staminaMax, vidaMax);
+    }
 
     @Override
     public void atacar(Inimigos inimigo) {

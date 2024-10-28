@@ -17,10 +17,8 @@ public class Main {
 
     // CLEAR NO TERMINAL.
     public static void clear() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println();
+        System.out.println("\n".repeat(50));
         }
-    }
 
     // CÓDIGO PROPRIAMENTE DITO.
     public static void main(String[] args) {
@@ -80,7 +78,7 @@ public class Main {
             switch (escolha) {
                 case 1:
                     clear();
-                    personagem = new Tanker(nome, 30, 15, 5);
+                    personagem = new Tanker(nome, 30, 15, 5, 15, 30);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("      " + nome + " escolheu a classe Tanker!");
                     System.out.println("+ ---------------------------------------- +");
@@ -94,7 +92,7 @@ public class Main {
                     break;
                 case 2:
                     clear();
-                    personagem = new Guerreiro(nome, 20, 20, 15);
+                    personagem = new Guerreiro(nome, 20, 20, 15, 20, 20);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("    " + nome + " escolheu a classe Guerreiro!");
                     System.out.println("+ ---------------------------------------- +");
@@ -108,7 +106,7 @@ public class Main {
                     break;
                 case 3:
                     clear();
-                    personagem = new Mago(nome, 10, 25, 25);
+                    personagem = new Mago(nome, 10, 25, 25, 25, 10);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("       " + nome + " escolheu a classe Mago!");
                     System.out.println("+ ---------------------------------------- +");

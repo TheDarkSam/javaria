@@ -3,10 +3,8 @@ import java.util.Scanner;
 public class Batalha {
 
     public static void clear() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println();
-        }
-    }//trocar por clear dps!
+        System.out.println("\n".repeat(50));
+    }
 
     private Personagem personagem;
     private Inimigos inimigo;
@@ -27,6 +25,13 @@ public class Batalha {
             System.out.println("+ --------------------------------------------------- +");
             System.out.println(" ");
             System.out.println("-> O que " + personagem.getNome() + " deve fazer?");
+            if (personagem instanceof Mago){
+                System.out.println("Vida: " + personagem.vida + "/" + personagem.vidaMax + " | Mana: " + personagem.mana + "/" + personagem.manaMax);
+            } else if (personagem instanceof Guerreiro) {
+                System.out.println("Vida: " + personagem.vida + "/" + personagem.vidaMax + " | Stamina " + personagem.stamina + "/" + personagem.staminaMax);
+            } else if (personagem instanceof Tanker) {
+                System.out.println("Vida: " + personagem.vida + "/" + personagem.vidaMax + " | Stamina " + personagem.stamina + "/" + personagem.staminaMax);
+            }
             System.out.println(" ");
             System.out.println("1 - Atacar.");
             System.out.println("2 - Recuperar STA/MAN.");
@@ -57,7 +62,7 @@ public class Batalha {
                 }} else if (escolhaBatalha == 2) {
                     clear();
                     personagem.recuperar();
-                    System.out.println(personagem.getNome() + " enquanto se recupera, " + inimigo.getNome() + " ataca!");
+                    System.out.println("Enquanto isso, " + inimigo.getNome() + " ataca!");
                     System.out.println(" ");
                     if (inimigo.inimigoestaVivo()) {
                         int danoInimigo = inimigo.inimigocalcularDano(personagem);

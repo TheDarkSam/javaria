@@ -1,8 +1,9 @@
 public class Mago extends Personagem {
-    int mana;
-    private int manaMax = 20;
+    public static final int manaMax = 25;
 
-    public Mago(String nome, int vida, int mana, int dano) {super(nome, vida, dano);this.mana = mana;}
+    public Mago(String nome, int vida, int mana, int dano, int manaMax, int vidaMax) {
+        super(vida, nome, mana, dano, manaMax, vidaMax);
+    }
 
     @Override
     public void atacar(Inimigos inimigo) {

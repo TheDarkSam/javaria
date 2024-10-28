@@ -6,26 +6,33 @@ public abstract class Personagem {
     int vida;
     int stamina;
     int dano;
+    int mana;
+    int staminaMax;
+    int vidaMax;
+    int manaMax;
 
     Scanner scanf = new Scanner(System.in);
 
     public static void clear() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println();
-        }
+        System.out.println("\n".repeat(50));
     }
 
-    public Personagem(String nome, int vida, int stamina, int dano) {
+    public Personagem(String nome, int vida, int stamina, int dano, int staminaMax, int vidaMax) {
         this.nome = nome;
         this.vida = vida;
         this.stamina = stamina;
         this.dano = dano;
+        this.staminaMax = staminaMax;
+        this.vidaMax = vidaMax;
     }
 
-    public Personagem(String nome, int vida, int dano) {
-        this.nome = nome;
+    public Personagem(int vida, String nome, int mana, int dano, int vidaMax, int manaMax) {
         this.vida = vida;
+        this.nome = nome;
+        this.mana = mana;
         this.dano = dano;
+        this.manaMax = manaMax;
+        this.vidaMax = vidaMax;
     }
 
     protected String getNome() {
@@ -130,3 +137,4 @@ public abstract class Personagem {
 
         System.out.println("+ --------------------------------------------------- +");
     }
+}
