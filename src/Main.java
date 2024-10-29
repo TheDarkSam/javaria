@@ -21,13 +21,23 @@ public class Main {
         System.out.println("\n".repeat(50));
         }
 
+    // Gerações de ESPADA.
+    public static Espada GeradorEspadasComuns(){
+        Random random = new Random();
+
+        String nome = "Espada Comum";
+        int dano = random.nextInt(3) + 1;
+        int custoStamina = random.nextInt(2) + 1;
+        Espada e = new Espada(nome, dano, custoStamina);
+        System.out.println(e);
+        return e;
+    }
+
     // CÓDIGO PROPRIAMENTE DITO.
     public static void main(String[] args) {
         Scanner scanf = new Scanner(System.in);
         Inventario inventario = new Inventario();
 
-        // Gerações de ESPADA.
-        GeradorEspadasComuns gerarEspadaComum = new GeradorEspadasComuns();
 
         // Gerações de CAJADO.
         GeradorCajadosComuns gerarCajadoComum = new GeradorCajadosComuns();
@@ -52,6 +62,7 @@ public class Main {
                 .build();
 
         // TELA INICIAL.
+        Espada espadaNova = GeradorEspadasComuns();
         System.out.println("+ ---------------------------------------- +");
         System.out.println("         Olá, qual será seu nome?");
         System.out.println("+ ---------------------------------------- +");
@@ -83,7 +94,8 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("      " + nome + " escolheu a classe Tanker!");
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println(gerarEspadaComum.gerarEspadasComuns());
+
+
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("Pressione Enter para continuar...");
                     scanf.nextLine();
@@ -96,8 +108,6 @@ public class Main {
                     System.out.println("    " + nome + " escolheu a classe Guerreiro!");
                     System.out.println("+ ---------------------------------------- +");
 
-                    System.out.println("+ ---------------------------------------- +");
-                    System.out.println(gerarEspadaComum.gerarEspadasComuns());
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("Pressione Enter para continuar...");
                     scanf.nextLine();

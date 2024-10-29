@@ -79,10 +79,6 @@ public class Batalha {
                     scanf.nextLine();
                 }else if (escolhaBatalha == 3) {
                     clear();
-                    Inventario inventario = new Inventario();
-                    inventario.adicionarItens();
-                    inventario.exibirInventario();
-                    inventario.removerItem();
                     System.out.println("Pressione Enter para continuar...");
                     scanf.nextLine();
                 } else if (escolhaBatalha == 4) {

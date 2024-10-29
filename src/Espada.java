@@ -22,14 +22,3 @@ class Espada extends Itens {
         return nome;
     }
 }
-
-class GeradorEspadasComuns {
-    private Random random = new Random();
-
-    public Espada gerarEspadasComuns() {
-        String nome = "Espada Comum";
-        int dano = random.nextInt(3) + 1;
-        int custoStamina = random.nextInt(2) + 1;
-        return new Espada(nome, dano, custoStamina);
-    }
-}
