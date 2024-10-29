@@ -21,17 +21,23 @@ public class Batalha {
         while (inimigo.inimigoestaVivo() && personagem.estaVivo()) {
             clear();
             System.out.println("+ --------------------------------------------------- +");
-            System.out.println("            Seu inimigo é um " + inimigo.getNome());
+            System.out.println("              " + inimigo.getNome() + " | Vida: " + inimigo.getVida());
             System.out.println("+ --------------------------------------------------- +");
             System.out.println(" ");
             System.out.println("-> O que " + personagem.getNome() + " deve fazer?");
+            System.out.println(" ");
+            System.out.println("+ --------------------------------------------------- +");
             if (personagem instanceof Mago){
-                System.out.println("Vida: " + personagem.vida + "/" + personagem.vidaMax + " | Mana: " + personagem.mana + "/" + personagem.manaMax);
+                System.out.println("|              Vida: " + personagem.vida + "/" + personagem.vidaMax +
+                        " | Mana: " + personagem.mana + "/" + personagem.manaMax + "              |");
             } else if (personagem instanceof Guerreiro) {
-                System.out.println("Vida: " + personagem.vida + "/" + personagem.vidaMax + " | Stamina " + personagem.stamina + "/" + personagem.staminaMax);
+                System.out.println("|             Vida: " + personagem.vida + "/" + personagem.vidaMax +
+                        " | Stamina " + personagem.stamina + "/" + personagem.staminaMax + "             |");
             } else if (personagem instanceof Tanker) {
-                System.out.println("Vida: " + personagem.vida + "/" + personagem.vidaMax + " | Stamina " + personagem.stamina + "/" + personagem.staminaMax);
+                System.out.println("|             Vida: " + personagem.vida + "/" + personagem.vidaMax +
+                        " | Stamina " + personagem.stamina + "/" + personagem.staminaMax + "             |");
             }
+            System.out.println("+ --------------------------------------------------- +");
             System.out.println(" ");
             System.out.println("1 - Atacar.");
             System.out.println("2 - Recuperar STA/MAN.");

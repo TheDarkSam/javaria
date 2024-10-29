@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
@@ -66,8 +67,8 @@ public class Main {
             System.out.println("+ ---------------------------------------- +");
             System.out.println(" ");
             System.out.println("1 - Tanker | 30 HP | 15 Sta | 5 Dano");
-            System.out.println("2 - Guerreiro | 20 HP | 20 Sta | 15 Dano");
-            System.out.println("3 - Mago | 10HP | 25 Mana | 25 Dano");
+            System.out.println("2 - Guerreiro | 20 HP | 20 Sta | 10 Dano");
+            System.out.println("3 - Mago | 10HP | 25 Mana | 15 Dano");
             System.out.println(" ");
             System.out.println("+ ---------------------------------------- +");
             System.out.println(" ");
@@ -84,21 +85,19 @@ public class Main {
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarEspadaComum.gerarEspadasComuns());
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
-                    System.out.println("+ ---------------------------------------- +");
                     System.out.println("Pressione Enter para continuar...");
                     scanf.nextLine();
                     classeEscolhida = true;
                     break;
                 case 2:
                     clear();
-                    personagem = new Guerreiro(nome, 20, 20, 15, 20, 20);
+                    personagem = new Guerreiro(nome, 20, 20, 10, 20, 20);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("    " + nome + " escolheu a classe Guerreiro!");
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println(gerarEspadaComum.gerarEspadasComuns());
+
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println(gerarArmaduraComum.gerarArmadurasComuns());
+                    System.out.println(gerarEspadaComum.gerarEspadasComuns());
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("Pressione Enter para continuar...");
                     scanf.nextLine();
@@ -106,13 +105,11 @@ public class Main {
                     break;
                 case 3:
                     clear();
-                    personagem = new Mago(nome, 10, 25, 25, 25, 10);
+                    personagem = new Mago(nome, 10, 25, 15, 25, 10);
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("       " + nome + " escolheu a classe Mago!");
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarCajadoComum.gerarCajadosComuns());
-                    System.out.println("+ ---------------------------------------- +");
-                    System.out.println(gerarMantoComum.gerarMantosComuns());
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println("Pressione Enter para continuar...");
                     scanf.nextLine();

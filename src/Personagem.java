@@ -26,7 +26,7 @@ public abstract class Personagem {
         this.vidaMax = vidaMax;
     }
 
-    public Personagem(int vida, String nome, int mana, int dano, int vidaMax, int manaMax) {
+    public Personagem(int vida, String nome, int mana, int dano, int manaMax, int vidaMax) {
         this.vida = vida;
         this.nome = nome;
         this.mana = mana;
