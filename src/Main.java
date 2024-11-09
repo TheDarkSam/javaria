@@ -1,3 +1,7 @@
+import ItensGerais.*;
+// PS: FAZER IMPORT DE PACKAGE DIREITO PQ OS GERADOR TA BUGADO NO PACKAGE.
+import PersonagensEClasses.*;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -21,23 +25,10 @@ public class Main {
         System.out.println("\n".repeat(50));
         }
 
-    // Gerações de ESPADA.
-    public static Espada GeradorEspadasComuns(){
-        Random random = new Random();
-
-        String nome = "Espada Comum";
-        int dano = random.nextInt(3) + 1;
-        int custoStamina = random.nextInt(2) + 1;
-        Espada e = new Espada(nome, dano, custoStamina);
-        System.out.println(e);
-        return e;
-    }
-
     // CÓDIGO PROPRIAMENTE DITO.
     public static void main(String[] args) {
         Scanner scanf = new Scanner(System.in);
         Inventario inventario = new Inventario();
-
 
         // Gerações de CAJADO.
         GeradorCajadosComuns gerarCajadoComum = new GeradorCajadosComuns();
@@ -47,6 +38,9 @@ public class Main {
 
         // Gerações de MANTOS.
         GeradorMantosComuns gerarMantoComum = new GeradorMantosComuns();
+
+        // Gerações de ESPADA.
+        GeradorEspadasComuns gerarEspadaComum = new GeradorEspadasComuns();
 
         // INIMIGOS.
         Inimigos goblinComum = new Inimigos.InimigoBuilder()
@@ -77,9 +71,9 @@ public class Main {
             System.out.println("            Escolha sua classe:");
             System.out.println("+ ---------------------------------------- +");
             System.out.println(" ");
-            System.out.println("1 - Tanker | 30 HP | 15 Sta | 5 Dano");
-            System.out.println("2 - Guerreiro | 20 HP | 20 Sta | 10 Dano");
-            System.out.println("3 - Mago | 10HP | 25 Mana | 15 Dano");
+            System.out.println("1 - PersonagensEClasses.Tanker | 30 HP | 15 Sta | 5 Dano");
+            System.out.println("2 - PersonagensEClasses.Guerreiro | 20 HP | 20 Sta | 10 Dano");
+            System.out.println("3 - PersonagensEClasses.Mago | 10HP | 25 Mana | 15 Dano");
             System.out.println(" ");
             System.out.println("+ ---------------------------------------- +");
             System.out.println(" ");
@@ -92,7 +86,7 @@ public class Main {
                     clear();
                     personagem = new Tanker(nome, 30, 15, 5, 15, 30);
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("      " + nome + " escolheu a classe Tanker!");
+                    System.out.println("      " + nome + " escolheu a classe PersonagensEClasses.Tanker!");
                     System.out.println("+ ---------------------------------------- +");
 
 
@@ -105,7 +99,7 @@ public class Main {
                     clear();
                     personagem = new Guerreiro(nome, 20, 20, 10, 20, 20);
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("    " + nome + " escolheu a classe Guerreiro!");
+                    System.out.println("    " + nome + " escolheu a classe PersonagensEClasses.Guerreiro!");
                     System.out.println("+ ---------------------------------------- +");
 
                     System.out.println("+ ---------------------------------------- +");
@@ -117,7 +111,7 @@ public class Main {
                     clear();
                     personagem = new Mago(nome, 10, 25, 15, 25, 10);
                     System.out.println("+ ---------------------------------------- +");
-                    System.out.println("       " + nome + " escolheu a classe Mago!");
+                    System.out.println("       " + nome + " escolheu a classe PersonagensEClasses.Mago!");
                     System.out.println("+ ---------------------------------------- +");
                     System.out.println(gerarCajadoComum.gerarCajadosComuns());
                     System.out.println("+ ---------------------------------------- +");

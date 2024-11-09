@@ -1,3 +1,5 @@
+package ItensGerais;
+
 import java.util.Random;
 
 class Cajado extends Itens {
@@ -13,7 +15,7 @@ class Cajado extends Itens {
 
     @Override
     public String toString() {
-        return " Cajado: " + nome +
+        return " ItensGerais.Cajado: " + nome +
                 "\n Dano: " + dano +
                 "\n Custo Mana: " + custoMana;
     }
@@ -28,6 +30,8 @@ class GeradorCajadosComuns {
         String nome = "Cajado Comum";
         int dano = random.nextInt(3) + 1;
         int custoMana = random.nextInt(2) + 1;
-        return new Cajado(nome, dano, custoMana);
+        Cajado cajado = new Cajado(nome, dano, custoMana);
+        Inventario.adicionarItens(cajado);
+        return cajado;
     }
 }

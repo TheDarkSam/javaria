@@ -1,3 +1,5 @@
+package ItensGerais;
+
 import java.util.Random;
 
 class Armadura extends Itens {
@@ -13,7 +15,7 @@ class Armadura extends Itens {
 
     @Override
     public String toString() {
-        return " Armadura: " + nome +
+        return " ItensGerais.Armadura: " + nome +
                 "\n Resistência: " + resistencia +
                 "\n Stamina Concedida: " + stamina;
     }
@@ -25,7 +27,7 @@ class GeradorArmadurasComuns {
     private Random random = new Random();
 
     public Armadura gerarArmadurasComuns() {
-        String nome = "Armadura Comum";
+        String nome = "ItensGerais.Armadura Comum";
         int resistencia = random.nextInt(3) + 1;
         int stamina = random.nextInt(2) + 1;
         return new Armadura(nome, resistencia, stamina);

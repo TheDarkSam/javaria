@@ -1,3 +1,5 @@
+package PersonagensEClasses;
+
 public class Guerreiro extends Personagem {
 
     public static final int staminaMax = 20;

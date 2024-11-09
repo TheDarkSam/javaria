@@ -1,3 +1,5 @@
+package ItensGerais;
+
 public class Itens {
 
     int resistencia;
@@ -37,7 +39,7 @@ public class Itens {
 
     @Override
         public String toString() {
-            return "Itens {" +
+            return "ItensGerais.Itens {" +
                     ", Dano=" + dano +
                     ", Resistência=" + resistencia +
                     ", Mana Extra=" + custoMana +

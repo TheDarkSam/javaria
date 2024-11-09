@@ -1,3 +1,5 @@
+package PersonagensEClasses;
+
 import java.util.Random;
 import java.util.Scanner;
 

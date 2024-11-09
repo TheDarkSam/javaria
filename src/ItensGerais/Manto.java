@@ -1,3 +1,5 @@
+package ItensGerais;
+
 import java.util.Random;
 
 class Manto extends Itens {
@@ -13,7 +15,7 @@ class Manto extends Itens {
 
     @Override
     public String toString() {
-        return " Manto: " + nome +
+        return " ItensGerais.Manto: " + nome +
                 "\n Resistência: " + resistencia +
                 "\n Mana Concedida: " + addMana;
     }
@@ -25,7 +27,7 @@ class GeradorMantosComuns {
     private Random random = new Random();
 
     public Manto gerarMantosComuns() {
-        String nome = "Manto Comum";
+        String nome = "ItensGerais.Manto Comum";
         int resistencia = random.nextInt(2) + 1;
         int addMana = random.nextInt(2) + 1;
         return new Manto(nome, resistencia, addMana);

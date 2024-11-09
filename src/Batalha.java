@@ -1,3 +1,8 @@
+import PersonagensEClasses.Guerreiro;
+import PersonagensEClasses.Mago;
+import PersonagensEClasses.Personagem;
+import PersonagensEClasses.Tanker;
+
 import java.util.Scanner;
 
 public class Batalha {

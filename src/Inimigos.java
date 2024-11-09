@@ -1,3 +1,5 @@
+import PersonagensEClasses.Personagem;
+
 import java.util.Random;
 
 public class Inimigos {
